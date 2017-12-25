@@ -1,14 +1,12 @@
-// converting object to string
-let obj = {
-  name:"Dileep"
+// Require Node and Third Party Modules
+const fs = require('fs')
+let originalNote = {
+  title: "Sample Title",
+  body: "Sample Body"
 }
-let stringObj = JSON.stringify(obj)
-console.log("type of stringObj", typeof stringObj);
-console.log("value in stringObj after converting from obj to json",stringObj);
-
-// converting json to object and fetching the values
-let personString = '{"name": "Dileep Thomas", "age": 25}'
-let person = JSON.parse(personString)
-let age = person.age
-console.log("type of person", typeof person);
-console.log("value of age after converting from json to object and fetching age" , age);
+let originalNoteString = JSON.stringify(originalNote)
+fs.writeFileSync('notes.json', originalNoteString)
+let noteString = fs.readFileSync('notes.json')
+let note = JSON.parse(noteString)
+console.log(typeof note);
+console.log(`title is ${note.title}`);
