@@ -32,7 +32,9 @@ getAll = () => {
   console.log("listing all notes");
 }
 removeNote = (title) => {
-  console.log("removing note", title);
+  let notes = fetchNotes();
+  let filteredNotes = notes.filter(note => note.title !== title)
+  saveNotes(filteredNotes)
 }
 module.exports ={
   addNote,
