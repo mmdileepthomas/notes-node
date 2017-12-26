@@ -22,6 +22,7 @@ addNote = (title, body) => {
   if(duplicateNotes.length === 0){
     notes.push(note)
     saveNotes(notes)
+    return note
   }
 }
 readNote = (title) => {

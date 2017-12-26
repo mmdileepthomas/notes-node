@@ -8,7 +8,12 @@ const notes = require('./notes.js')
 const argv = yargs.argv
 let command = argv._[0]
 if(command === "add"){
-  notes.addNote(argv.title, argv.body)
+ let note = notes.addNote(argv.title, argv.body)
+ if(note){
+   console.log("Note Created" , argv.title);
+ }else{
+   console.log("Note title taken already");
+ }
 }else if (command === "list") {
   notes.getAll();
 }else if(command === "read" ){
