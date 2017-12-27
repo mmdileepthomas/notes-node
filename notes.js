@@ -8,9 +8,16 @@ fetchNotes = () => {
       return [];
     }
   }
+// Saving Notes
 saveNotes = (note) =>{
     fs.writeFileSync('notes-data.json', JSON.stringify(note))
   }
+// Log Notes
+logNotes = (note) => {
+  console.log("----");
+  console.log(`Title: ${note.title}`);
+  console.log(`Body: ${note.body}`);
+}
 addNote = (title, body) => {
   let notes = fetchNotes();
   let note = {
@@ -43,5 +50,6 @@ module.exports ={
   addNote,
   readNote,
   removeNote,
-  getAll
+  getAll,
+  logNotes
 }

@@ -10,7 +10,8 @@ let command = argv._[0]
 if(command === "add"){
  let note = notes.addNote(argv.title, argv.body)
  if(note){
-   console.log("Note Created" , argv.title);
+   console.log("Note Created");
+   notes.logNotes(note);
  }else{
    console.log("Note title taken already");
  }
@@ -20,7 +21,7 @@ if(command === "add"){
   let note = notes.readNote(argv.title)
   if(note){
     console.log("Note Found");
-    console.log(`Body: ${note.body}`);
+    notes.logNotes(note)
   }else{
     console.log("Note not Found");
   }
