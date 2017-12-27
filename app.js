@@ -5,7 +5,20 @@ const yargs = require('yargs')
 // Modules Written By
 const notes = require('./notes.js')
 
-const argv = yargs.argv
+const argv = yargs
+            .command('add', 'Add a new Note', {
+              title:{
+                describe: "Title of Note",
+                demand:true,
+                alias:'t'
+              },
+              body:{
+                describe: "Body of Note",
+                alias:'b'
+              }
+            })
+            .help()
+            .argv
 let command = argv._[0]
 if(command === "add"){
  let note = notes.addNote(argv.title, argv.body)
