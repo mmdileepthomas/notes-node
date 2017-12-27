@@ -26,7 +26,9 @@ addNote = (title, body) => {
   }
 }
 readNote = (title) => {
-  console.log("reading note", title);
+  let notes = fetchNotes();
+  let filteredNote = notes.filter(note => note.title === title)
+  return filteredNote[0]
 }
 getAll = () => {
   console.log("listing all notes");
