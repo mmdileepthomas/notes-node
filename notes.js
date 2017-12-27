@@ -38,7 +38,7 @@ readNote = (title) => {
   return filteredNote[0]
 }
 getAll = () => {
-  console.log("listing all notes");
+  return fetchNotes();
 }
 removeNote = (title) => {
   let notes = fetchNotes();

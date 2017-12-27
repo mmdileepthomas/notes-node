@@ -16,7 +16,9 @@ if(command === "add"){
    console.log("Note title taken already");
  }
 }else if (command === "list") {
-  notes.getAll();
+  let allNotes = notes.getAll();
+  console.log(`Printing ${allNotes.length} note(s)`);
+  allNotes.forEach(note => notes.logNotes(note))
 }else if(command === "read" ){
   let note = notes.readNote(argv.title)
   if(note){
