@@ -4,14 +4,15 @@ const _ = require('lodash')
 const yargs = require('yargs')
 // Modules Written By
 const notes = require('./notes.js')
+const titleOptions = {
+    describe: "Title of Note",
+    demand:true,
+    alias:'t'
+}
 
 const argv = yargs
             .command('add', 'Add a new Note', {
-              title:{
-                describe: "Title of Note",
-                demand:true,
-                alias:'t'
-              },
+              title:titleOptions,
               body:{
                 describe: "Body of Note",
                 alias:'b'
@@ -19,18 +20,10 @@ const argv = yargs
             })
             .command('list', "List all notes")
             .command('read', "Read a note" , {
-              title:{
-                describe: "Title of Note to read",
-                demand:true,
-                alias:'t'
-              }
+              title:titleOptions
             })
             .command('remove', "Remove a Note", {
-              title: {
-                describe: "Title of Note to be removed",
-                demand:true,
-                alias: 't'
-              }
+              title:titleOptions
             })
             .help()
             .argv
