@@ -4,6 +4,7 @@ console.log(square(4));
 let user ={
   name:"Dileep Thomas",
   sayHi: () => {
+    console.log(arguments);
     console.log(`hi , i m ${this.name}`);
   },
   sayHiAlt () {
@@ -11,5 +12,5 @@ let user ={
     console.log(`hi , i m ${this.name}`);
   }
 }
-user.sayHi();
+user.sayHi(5,6,7);
 user.sayHiAlt(1,2,3);
