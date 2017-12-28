@@ -7,9 +7,9 @@ let user ={
     console.log(`hi , i m ${this.name}`);
   },
   sayHiAlt () {
+    console.log(arguments);
     console.log(`hi , i m ${this.name}`);
   }
 }
-
 user.sayHi();
-user.sayHiAlt();
+user.sayHiAlt(1,2,3);
