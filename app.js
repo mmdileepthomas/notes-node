@@ -9,14 +9,15 @@ const titleOptions = {
     demand:true,
     alias:'t'
 }
+const bodyOptions = {
+  describe: "Body of Note",
+  alias:'b'
+}
 
 const argv = yargs
             .command('add', 'Add a new Note', {
               title:titleOptions,
-              body:{
-                describe: "Body of Note",
-                alias:'b'
-              }
+              body:bodyOptions
             })
             .command('list', "List all notes")
             .command('read', "Read a note" , {
